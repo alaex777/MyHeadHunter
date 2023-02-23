@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ employer.name }}</h1>
+<h1>Адрес:</h1>
+<h4>{{ employer.address }}</h4>
+<h1>Контакты:</h1>
+<h4>{{ employer.contacts }}</h4>
+<h1>Рвзмер компании:</h1>
+{% if employer.amount_of_employees > 10000 %}
+<h4>Сверхбольшая компания</h4>
+{% elif employer.amount_of_employees > 1000 %}
+<h4>Большая компания</h4>
+{% elif employer.amount_of_employees > 100 %}
+<h4>Средняя компания</h4>
+{% else %}
+<h4>Маленькая компания</h4>
+{% endif %}
+<h1>О нас:</h1>
+<h4>{{ employer.description }}</h4>
+{% if user == employer.auth_user %}
+<a href="/edit/employer">Редактировать профиль</a>
+{% endif %}
+{% endblock %}

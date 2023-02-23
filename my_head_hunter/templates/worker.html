@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ worker.name }}</h1>
+<h1>Контакты:</h1>
+<h4>{{ worker.contacts }}</h4>
+<h1>Обо мне:</h1>
+<h4>{{ worker.description }}</h4>
+{% if user == worker.auth_user %}
+<a href="/edit/worker">Редактировать профиль</a>
+{% endif %}
+{% endblock %}

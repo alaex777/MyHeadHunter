@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Список вакансий</h1>
+{% for i in vacancies %}
+    <a href="/get/vacancy/{{ i.id }}">{{ i.name }}</a>
+    <p>{{ i.employer.name }}</p>
+    {% if is_auth %}
+        <a href="/send/message/{{ i.id }}">Откликнуться</a>
+    {% endif %}
+{% endfor %}
+{% endblock %}

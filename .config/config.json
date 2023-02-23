@@ -1,0 +1,13 @@
+{
+    "db_user": "test_hh",
+    "db_password": "test_hh",
+    "projects": {
+      "my_head_hunter": {
+        "db_name": "test_db",
+        "hosts": "localhost",
+        "port": "5432"
+      }
+    },
+    "production": "False"
+  }
+  
